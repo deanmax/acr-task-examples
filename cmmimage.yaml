@@ -1,0 +1,7 @@
+version: v1.1.0
+steps:
+  - build: -t $Registry/cmmtestimage:$ID -t $Registry/cmmtestimage:latest -f cmm-acr-image.dockerfile .
+    pull: true
+  - push:
+    - $Registry/cmmtestimage:$ID
+    - $Registry/cmmtestimage:latest
